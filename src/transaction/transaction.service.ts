@@ -12,7 +12,6 @@ export class TransactionService {
     async getTransactions(): Promise<Transaction[]> {
         const transactions = await this.transactionModel.find()
         return transactions;
-
     }
 
     async getTransaction(transactionID: string): Promise<Transaction> {
