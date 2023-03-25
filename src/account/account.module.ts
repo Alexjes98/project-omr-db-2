@@ -13,6 +13,7 @@ import { AccountSchema } from './schemas/account.schema';
     ])
   ],
   controllers: [AccountController],
-  providers: [AccountService]
+  providers: [AccountService],
+  exports: [AccountService]
 })
 export class AccountModule { }

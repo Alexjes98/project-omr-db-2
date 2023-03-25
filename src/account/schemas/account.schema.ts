@@ -19,5 +19,5 @@ export const AccountSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    transactions: [{ type: TransactionSchema, ref: 'Event' }]
+    transactions: [TransactionSchema]
 });

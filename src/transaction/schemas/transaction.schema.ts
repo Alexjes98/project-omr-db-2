@@ -2,8 +2,8 @@ import { Schema } from "mongoose";
 
 export const TransactionSchema = new Schema({
     transaction_code: String,
-    sourceAccount: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
-    targetAccount: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
+    source_account: String,
+    target_account: String,
     transaction_type: 
     {
         type: String,

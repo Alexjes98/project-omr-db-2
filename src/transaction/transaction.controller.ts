@@ -8,9 +8,8 @@ export class TransactionController {
 
     constructor(private transactionService: TransactionService) { }
 
-    @Post('/create')
+    @Post('/')
     async createPost(@Res() res: any, @Body() createTransactionDTO: CreateTransactionDTO) {
-        
         const transaction = await this.transactionService.createTransaction(createTransactionDTO)
         res.status(HttpStatus.OK).json({
             message: 'received',

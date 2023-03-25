@@ -9,7 +9,7 @@ export class PersonController {
 
     constructor(private personService: PersonService) { }
 
-    @Post('/create')
+    @Post('/')
     async createPerson(@Res() res: any, @Body() createPersonDTO: CreatePersonDTO) {
         const person = await this.personService.createPerson(createPersonDTO)
         res.status(HttpStatus.OK).json({
