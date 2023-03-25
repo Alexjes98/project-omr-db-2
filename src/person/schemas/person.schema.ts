@@ -17,5 +17,4 @@ export const PersonSchema = new Schema({
     },
     document_number: String,
     phone: String,
-    accounts: [Account]
 });

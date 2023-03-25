@@ -6,5 +6,4 @@ export class CreatePersonDTO{
     readonly last_name: string
     readonly document_number: string
     readonly phone: string
-    readonly accounts: Account[]
 }
