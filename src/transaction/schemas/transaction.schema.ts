@@ -1,14 +1,18 @@
 import { Schema } from "mongoose";
 
 export const TransactionSchema = new Schema({
-    origin_account: String,
-    destination_account: String,
-    code: String,
+    transaction_code: String,
+    sourceAccount: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
+    targetAccount: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
+    transaction_type: 
+    {
+        type: String,
+        default: "deposit"
+    },    
     amount: {
         type: Number,
         default: 0
-    },
-    transaction_type: String,
+    },    
     created_at: {
         type: Date,
         default: Date.now

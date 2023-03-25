@@ -1,10 +1,11 @@
+import { Schema } from "mongoose"
+
 export interface Transaction extends Document {
-    readonly id: number
-    readonly origin_account: string
-    readonly destination_account: string
-    readonly code: string
-    readonly amount: number
-    readonly transaction_type: string
+    readonly transaction_code: string
+    readonly sourceAccount: { type: Schema, ref: string, required: boolean}
+    readonly targetAccount: { type: Schema, ref: string, required: boolean}
+    readonly transaction_type: string 
+    readonly amount: number 
     readonly created_at: Date
     readonly updated_at: Date
 }
