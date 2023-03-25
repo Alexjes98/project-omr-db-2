@@ -33,8 +33,8 @@ export class PersonService {
         return persons;
     }
 
-    async getPerson(personID: string): Promise<Person> {
-        const person = await this.personModel.findById(personID);
-        return person;
+    async getPersonByDocNum(document_number: string) {
+        const person = await this.personModel.findOne({document_number: document_number});
+        return person;        
     }
 }

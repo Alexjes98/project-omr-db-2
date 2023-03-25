@@ -1,9 +1,15 @@
 import { Schema } from "mongoose";
 
-export const Account = new Schema({
+import { TransactionSchema } from "src/transaction/schemas/transaction.schema";
+
+export const AccountSchema = new Schema({
     account_id: {
         type: String,
         default: new Date().getTime().toString()
+    },
+    person_doc_number: {
+        type: String,
+        default: "000000"
     },
     balance: {
         type: Number,
@@ -12,5 +18,6 @@ export const Account = new Schema({
     creation_date: {
         type: Date,
         default: Date.now
-    }
+    },
+    transactions: [{ type: TransactionSchema, ref: 'Event' }]
 });

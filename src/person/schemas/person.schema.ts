@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import { Account } from "src/account/schemas/account.schema";
+import { AccountSchema } from "src/account/schemas/account.schema";
 
 export const PersonSchema = new Schema({
     person_id: {
