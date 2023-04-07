@@ -13,8 +13,8 @@ export class PersonService {
         return person.save();
     }
 
-    async updatePerson(personID: string, createPersonDTO: CreatePersonDTO): Promise<Person> {
-        const updatedPerson = await this.personModel.findByIdAndUpdate(personID, createPersonDTO, { new: true });
+    async updatePerson(person_id: string, createPersonDTO: CreatePersonDTO): Promise<Person> {
+        const updatedPerson = await this.personModel.findOneAndUpdate({person_id: person_id}, createPersonDTO, { new: true });
         return updatedPerson;
     }
 

@@ -12,7 +12,6 @@ export class TransactionController {
     async createPost(@Res() res: any, @Body() createTransactionDTO: CreateTransactionDTO) {
         const transaction = await this.transactionService.createTransaction(createTransactionDTO)
         res.status(HttpStatus.OK).json({
-            message: 'received',
             transaction: transaction
         });
     }
@@ -21,12 +20,6 @@ export class TransactionController {
         const transactions = await this.transactionService.getTransactions();
         return res.status(HttpStatus.OK).json({
             transactions: transactions
-        })
-    }
-    @Get('/transactions')
-    getTransaction(@Res() res: any) {
-        res.status(HttpStatus.OK).json({
-            message: 'received'
         })
     }
 }

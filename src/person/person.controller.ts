@@ -17,9 +17,9 @@ export class PersonController {
         });
     }
 
-    @Post('/update')
-    async updatePerson(@Res() res: any, @Body() createPersonDTO: CreatePersonDTO) {
-        const person = await this.personService.createPerson(createPersonDTO)
+    @Post('/update/:person_id')
+    async updatePerson(@Res() res: any,@Param('person_id') person_id: string , @Body() createPersonDTO: CreatePersonDTO) {
+        const person = await this.personService.updatePerson(person_id,createPersonDTO)
         res.status(HttpStatus.OK).json({
             person: person
         });

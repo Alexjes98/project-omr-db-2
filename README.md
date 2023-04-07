@@ -25,7 +25,117 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Endpoints
+## Accounts
+### create an account
+```json
+// POST
+URL: /account
+{
+  "account_id": "string",
+  "person_doc_number": "string",
+  "balance": 0,
+  "creation_date": "Date"
+}
+// EXAMPLE
+{
+  "account_id": "64",
+  "person_doc_number": "123231"
+}
+```
+### get person accounts by doc_number:
+```
+/account/person/:person_number
+```
+### get person transactions by account number:
+```
+/account/:account_id
+```
+## Persons
+```json
+// POST
+URL: /person
+{
+  "person_id": "string",
+  "name": "string",
+  "last_name": "string",
+  "document_number": "string",
+  "phone": "string"
+}
+// EXAMPLE
+{
+  "person_id": "3",
+  "name": "Mark",
+  "last_name": "Twain",
+  "document_number": "4321",
+  "phone": "321232132"
+}
+```
+```json
+// POST
+URL: /update/:person_id
+{
+  "person_id": "string",
+  "name": "string",
+  "last_name": "string",
+  "document_number": "string",
+  "phone": "string"
+}
+// EXAMPLE
+{
+  "person_id": "3",
+  "name": "Mark",
+  "last_name": "Twain",
+  "document_number": "4321",
+  "phone": "321232132"
+}
+```
+### get persons
+```
+/person
+```
+### get person by document number:
+```
+/person/:document_number
+```
+## Transactions 
+```json
+// POST
+URL: /transaction
+{
+  "transaction_code": "String",
+  "source_account": "String",
+  "target_account": "String",
+  "transaction_type": "String",
+  "amount": 0,
+  "created_at": "Date",
+  "updated_at": "Date"
+}
+// EXAMPLE
+//DEPOSIT
+{
+  "transaction_code": "2",
+  "target_account": "64",
+  "transaction_type": "deposit",
+  "amount": 10
+}
+// WITHDRAW
+{
+  "transaction_code": "2",
+  "target_account": "64",
+  "transaction_type": "withdraw",
+  "amount": 1
+}
+//TRANSFER
+{
+  "transaction_code": "22",
+  "source_account": "64",
+  "target_account": "2",
+  "transaction_type": "transfer",
+  "amount": 1
+}
 
+```
 ## Installation
 
 ```bash

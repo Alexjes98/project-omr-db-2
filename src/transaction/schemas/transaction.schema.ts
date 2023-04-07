@@ -2,7 +2,10 @@ import { Schema } from "mongoose";
 
 export const TransactionSchema = new Schema({
     transaction_code: String,
-    source_account: String,
+    source_account: {
+        type: String,
+        default: "0"
+    },
     target_account: String,
     transaction_type: 
     {
